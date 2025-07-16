@@ -12,7 +12,7 @@ obj/
 # Installer and package outputs
 *.exe
 *.msi
-*.nsi
+# *.nsi
 *.vsix
 
 # User-specific files
