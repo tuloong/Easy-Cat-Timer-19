@@ -133,6 +133,30 @@
                                  IconWidth="85" IconHeight="39" Canvas.Right="48" Canvas.Top="283"
                                  Cursor="Hand"
                                  Click="StartButton_Click"/>
+
+            <!--预设时间按钮-->
+            <StackPanel Canvas.Left="48" Canvas.Top="283" Orientation="Horizontal" Width="180">
+                <Button x:Name="Preset25Button" Content="25" 
+                        Style="{StaticResource NoBackgroundButtonStyle}"
+                        Width="40" Height="30" Margin="0,0,5,0"
+                        Background="#ffcd2f" Foreground="#FF656565" FontSize="14" FontWeight="Bold"
+                        Cursor="Hand" Click="Preset25Button_Click"/>
+                <Button x:Name="Preset50Button" Content="50" 
+                        Style="{StaticResource NoBackgroundButtonStyle}"
+                        Width="40" Height="30" Margin="0,0,5,0"
+                        Background="#ffcd2f" Foreground="#FF656565" FontSize="14" FontWeight="Bold"
+                        Cursor="Hand" Click="Preset50Button_Click"/>
+                <Button x:Name="Preset75Button" Content="75" 
+                        Style="{StaticResource NoBackgroundButtonStyle}"
+                        Width="40" Height="30" Margin="0,0,5,0"
+                        Background="#ffcd2f" Foreground="#FF656565" FontSize="14" FontWeight="Bold"
+                        Cursor="Hand" Click="Preset75Button_Click"/>
+                <Button x:Name="Preset99Button" Content="99" 
+                        Style="{StaticResource NoBackgroundButtonStyle}"
+                        Width="40" Height="30"
+                        Background="#ffcd2f" Foreground="#FF656565" FontSize="14" FontWeight="Bold"
+                        Cursor="Hand" Click="Preset99Button_Click"/>
+            </StackPanel>
         </Canvas>
 
     </Grid>

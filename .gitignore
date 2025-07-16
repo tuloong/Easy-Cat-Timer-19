@@ -1,0 +1,36 @@
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Build results
+bin/
+obj/
+
+# Installer and package outputs
+*.exe
+*.msi
+*.nsi
+*.vsix
+
+# User-specific files
+*.DotSettings.user
+*.swp
+*.tmp
+*.log
+
+# Others
+_ReSharper*/
+[Tt]est[Rr]esult*/
+*.dbmdl
+*.dbproj.schemaview
+*.pdb
+*.cache
+*.config
+*.ide
+
+# OS generated files
+.DS_Store
+Thumbs.db 

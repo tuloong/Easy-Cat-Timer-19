@@ -136,6 +136,40 @@ namespace CatTimer_WpfProject
         }
         #endregion
 
+        #region 预设时间按钮事件
+        /// <summary>
+        /// 预设时间：25分钟
+        /// </summary>
+        private void Preset25Button_Click(object sender, RoutedEventArgs e)
+        {
+            SetPresetTime(25);
+        }
+
+        /// <summary>
+        /// 预设时间：50分钟
+        /// </summary>
+        private void Preset50Button_Click(object sender, RoutedEventArgs e)
+        {
+            SetPresetTime(50);
+        }
+
+        /// <summary>
+        /// 预设时间：75分钟
+        /// </summary>
+        private void Preset75Button_Click(object sender, RoutedEventArgs e)
+        {
+            SetPresetTime(75);
+        }
+
+        /// <summary>
+        /// 预设时间：99分钟
+        /// </summary>
+        private void Preset99Button_Click(object sender, RoutedEventArgs e)
+        {
+            SetPresetTime(99);
+        }
+        #endregion
+
         #region 控件的事件 -[分钟数按钮 and 秒钟数按钮]
         /// <summary>
         /// 当点击[分钟的增加]按钮时
@@ -494,6 +528,32 @@ namespace CatTimer_WpfProject
 
             //更新Ui
             SecondTextBlock.Text = _newSecondString;
+        }
+        #endregion
+
+        #region 私有方法 -[预设时间]
+        /// <summary>
+        /// 设置预设时间
+        /// </summary>
+        /// <param name="minutes">预设分钟数</param>
+        private void SetPresetTime(int minutes)
+        {
+            // 限制分钟数在有效范围内
+            minutes = Tools.Clamp(minutes, 0, 99);
+
+            // 设置分钟显示
+            string minuteString = minutes.ToString();
+            if (minutes < 10)
+            {
+                minuteString = "0" + minutes;
+            }
+            MinuteTextBlock.Text = minuteString;
+
+            // 重置秒数为00
+            SecondTextBlock.Text = "00";
+
+            // 播放音效
+            AppManager.AppSystems.AudioSystem.PlayAudio(AudioType.DefaultButtonDown);
         }
         #endregion
 
