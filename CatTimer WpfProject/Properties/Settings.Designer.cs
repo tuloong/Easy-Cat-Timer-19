@@ -46,5 +46,17 @@ namespace CatTimer_WpfProject.Properties {
                 this["Language"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool StartupOnBoot {
+            get {
+                return ((bool)(this["StartupOnBoot"]));
+            }
+            set {
+                this["StartupOnBoot"] = value;
+            }
+        }
     }
 }

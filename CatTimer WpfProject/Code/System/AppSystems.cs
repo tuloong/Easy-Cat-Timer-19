@@ -17,6 +17,7 @@ namespace CatTimer_WpfProject
         private AudioSystem audioSystem;//音效
         private SaveSystem saveSystem;//保存和读取
         private TaskbarSystem taskbarSystem;//任务栏
+        private SystemStartupSystem systemStartupSystem;//开机自启动
 
         #region 公开属性
         /// <summary>
@@ -66,6 +67,14 @@ namespace CatTimer_WpfProject
         {
             get { return taskbarSystem; }
         }
+
+        /// <summary>
+        /// 开机自启动系统
+        /// </summary>
+        public SystemStartupSystem SystemStartupSystem
+        {
+            get { return systemStartupSystem; }
+        }
         #endregion
 
         #region 构造方法
@@ -77,6 +86,7 @@ namespace CatTimer_WpfProject
             audioSystem = new AudioSystem();
             saveSystem = new SaveSystem();
             taskbarSystem = new TaskbarSystem();
+            systemStartupSystem = new SystemStartupSystem();
         }
         #endregion
     }

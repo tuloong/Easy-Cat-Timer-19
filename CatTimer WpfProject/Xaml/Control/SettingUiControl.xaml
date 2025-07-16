@@ -133,6 +133,50 @@
                 </StackPanel>
             </Grid>
 
+            <!--开机自启动-->
+            <Canvas Width="160" Height="28" Canvas.Left="85" Canvas.Top="108">
+                <CheckBox Canvas.Left="0" Canvas.Top="4" 
+                          Width="18" Height="18"
+                          IsChecked="{Binding SettingData.StartupOnBoot}">
+                </CheckBox>
+                
+                <TextBlock Canvas.Left="25" Canvas.Top="2" 
+                           FontSize="14" Foreground="#FF333333"
+                           FontFamily="{StaticResource MaybeCuteFontFamily.IncreaseSpacing}"
+                           Text="开机自启动"
+                           Visibility="{Binding SettingData.Language}"
+                           >
+                    <TextBlock.Style>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="Visibility" Value="Collapsed" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding SettingData.Language}" Value="2">
+                                    <Setter Property="Visibility" Value="Visible" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
+                
+                <TextBlock Canvas.Left="25" Canvas.Top="2" 
+                           FontSize="14" Foreground="#FF333333"
+                           FontFamily="{StaticResource MaybeCuteFontFamily.IncreaseSpacing}"
+                           Text="Start with Windows"
+                           Visibility="{Binding SettingData.Language}"
+                           >
+                    <TextBlock.Style>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="Visibility" Value="Collapsed" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding SettingData.Language}" Value="1">
+                                    <Setter Property="Visibility" Value="Visible" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
+            </Canvas>
+
         </Canvas>
 
 

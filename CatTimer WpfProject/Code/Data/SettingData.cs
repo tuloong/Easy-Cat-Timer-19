@@ -16,6 +16,7 @@ namespace CatTimer_WpfProject
         /* 设置相关 */
         private int volume;//音量
         private LanguageType language;//语言
+        private bool startupOnBoot;//开机自启动
 
 
 
@@ -46,6 +47,20 @@ namespace CatTimer_WpfProject
                 PropertyChange("Language");//更新UI
             }
         }
+
+        /// <summary>
+        /// 开机自启动
+        /// </summary>
+        public bool StartupOnBoot
+        {
+            get { return startupOnBoot; }
+            set
+            {
+                startupOnBoot = value;
+                PropertyChange("StartupOnBoot");//更新UI
+                AppManager.AppSystems.SystemStartupSystem.SetStartupOnBoot(startupOnBoot);//设置开机自启动
+            }
+        }
         #endregion
 
         #region 构造方法
@@ -53,6 +68,7 @@ namespace CatTimer_WpfProject
         {
             volume = 100;
             language = LanguageType.Chinese;
+            startupOnBoot = false;
         }
         #endregion 构造方法
 
