@@ -528,6 +528,9 @@ namespace CatTimer_WpfProject
 
             //更新Ui
             SecondTextBlock.Text = _newSecondString;
+
+            // 如果启用了自动开始功能且时间不为0，则自动开始计时
+            int _minuteNumber = StringToInt(MinuteTextBlock.Text);
         }
         #endregion
 
@@ -554,6 +557,10 @@ namespace CatTimer_WpfProject
 
             // 播放音效
             AppManager.AppSystems.AudioSystem.PlayAudio(AudioType.DefaultButtonDown);
+
+            // 如果启用了自动开始功能，则自动开始计时
+            StartTimer();
+
         }
         #endregion
 

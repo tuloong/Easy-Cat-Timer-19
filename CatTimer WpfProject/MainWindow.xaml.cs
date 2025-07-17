@@ -35,6 +35,9 @@ namespace CatTimer_WpfProject
 
             //初始化
             AppManager.Start();
+            
+            // 应用窗口置顶设置
+            this.Topmost = AppManager.AppDatas.SettingData.AlwaysOnTop;
         }
 
 

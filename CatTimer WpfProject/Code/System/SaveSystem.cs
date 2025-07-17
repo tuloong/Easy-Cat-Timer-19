@@ -20,6 +20,7 @@ namespace CatTimer_WpfProject
             Properties.Settings.Default.Volume = AppManager.AppDatas.SettingData.Volume;//是否有声音？
             Properties.Settings.Default.Language = (int)AppManager.AppDatas.SettingData.Language;//语言
             Properties.Settings.Default.StartupOnBoot = AppManager.AppDatas.SettingData.StartupOnBoot;//开机自启动
+            Properties.Settings.Default.AlwaysOnTop = AppManager.AppDatas.SettingData.AlwaysOnTop;//窗口置顶
 
             Properties.Settings.Default.Save();
         }
@@ -33,6 +34,7 @@ namespace CatTimer_WpfProject
             AppManager.AppDatas.SettingData.Volume = Properties.Settings.Default.Volume;
             AppManager.AppDatas.SettingData.Language = (LanguageType) Properties.Settings.Default.Language;
             AppManager.AppDatas.SettingData.StartupOnBoot = Properties.Settings.Default.StartupOnBoot;
+            AppManager.AppDatas.SettingData.AlwaysOnTop = Properties.Settings.Default.AlwaysOnTop;
 
             //同步开机自启动状态
             bool actualStartupStatus = AppManager.AppSystems.SystemStartupSystem.IsStartupOnBootEnabled();

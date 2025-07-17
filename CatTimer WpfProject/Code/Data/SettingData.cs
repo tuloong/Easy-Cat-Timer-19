@@ -17,6 +17,8 @@ namespace CatTimer_WpfProject
         private int volume;//音量
         private LanguageType language;//语言
         private bool startupOnBoot;//开机自启动
+        private bool alwaysOnTop;//窗口置顶
+        private bool autoStartTimer;//选中时间后自动开始计时
 
 
 
@@ -61,6 +63,38 @@ namespace CatTimer_WpfProject
                 AppManager.AppSystems.SystemStartupSystem.SetStartupOnBoot(startupOnBoot);//设置开机自启动
             }
         }
+
+        /// <summary>
+        /// 窗口置顶
+        /// </summary>
+        public bool AlwaysOnTop
+        {
+            get { return alwaysOnTop; }
+            set
+            {
+                alwaysOnTop = value;
+                PropertyChange("AlwaysOnTop");//更新UI
+                
+                // 设置窗口置顶
+                if (AppManager.MainWindow != null)
+                {
+                    AppManager.MainWindow.Topmost = alwaysOnTop;
+                }
+            }
+        }
+
+        /// <summary>
+        /// 选中时间后自动开始计时
+        /// </summary>
+        public bool AutoStartTimer
+        {
+            get { return autoStartTimer; }
+            set
+            {
+                autoStartTimer = value;
+                PropertyChange("AutoStartTimer");//更新UI
+            }
+        }
         #endregion
 
         #region 构造方法
@@ -69,6 +103,8 @@ namespace CatTimer_WpfProject
             volume = 100;
             language = LanguageType.Chinese;
             startupOnBoot = false;
+            alwaysOnTop = false;
+            autoStartTimer = false;
         }
         #endregion 构造方法
 

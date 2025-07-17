@@ -33,4 +33,25 @@ _ReSharper*/
 
 # OS generated files
 .DS_Store
-Thumbs.db 
+Thumbs.db
+
+
+.aider*
+.env
+# 忽略所有目录下的 .project_analysis 文件夹
+**/.project_analysis/
+**/.comate/
+**/.github/
+**/.idea/
+**/.cursor/
+**/.vscode/
+**/.trunk/
+**/.trae/
+**/.project_docs/
+**/.lingma/
+**/.amazonq/
+
+# 忽略根目录下的 .md 文件和 .* 文件夹
+/*.md
+/.*/
+/docs/

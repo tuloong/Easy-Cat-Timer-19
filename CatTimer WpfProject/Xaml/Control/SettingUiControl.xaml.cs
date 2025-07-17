@@ -146,6 +146,7 @@ namespace CatTimer_WpfProject
         private void SetLanguageImage(LanguageType _languageType)
         {
             ImageBrush _imageBrush = null;
+            
 
 
             if (_languageType == LanguageType.Chinese)

@@ -1,98 +1,131 @@
-﻿<UserControl x:Class="CatTimer_WpfProject.SettingUiControl"
+<UserControl x:Class="CatTimer_WpfProject.SettingUiControl"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:CatTimer_WpfProject"
-             mc:Ignorable="d" 
-             d:DesignHeight="344" d:DesignWidth="394"
+             mc:Ignorable="d"
+             d:DesignHeight="372"
+        d:DesignWidth="394"
              Name="SettingUiUserControl"
              IsVisibleChanged="SettingUiControl_OnIsVisibleChanged">
 
-
     <!--设置界面-->
-    <Canvas>
+    <Grid>
+        <Canvas>
 
-        <!--关闭按钮：点击后，关闭此窗口-->
-        <local:ButtonControl x:Name="CloseButtonControl"
-                             ButtonStyle="{StaticResource NoBackgroundButtonStyle}"
-                             Width="394" Height="344"
-                             Background="Transparent"></local:ButtonControl>
+            <!--关闭按钮：点击后，关闭此窗口-->
+            <local:ButtonControl x:Name="CloseButtonControl"
+                                 ButtonStyle="{StaticResource NoBackgroundButtonStyle}"
+                                 Width="394"
+                    Height="372"
+                                 Background="Transparent"></local:ButtonControl>
 
 
-        <!--波点1-->
-        <Border Width="220" Height="276" Canvas.Left="10" Canvas.Top="6"
-                Background="{StaticResource Other.WavePoint.ImageBrush}"
+            <!--波点1-->
+            <Border Width="220"
+                    Height="276"
+                    Canvas.Left="10"
+                    Canvas.Top="6"
+                    Background="{StaticResource Other.WavePoint.ImageBrush}"
                 IsHitTestVisible="False"></Border>
 
-        <!--这是一个很大的Button：点击这个Button，可以关闭界面-->
-        <Button Name="CloseButton"
-                Height="344" Width="394" 
-                Style="{StaticResource NoBackgroundButtonStyle}"
+            <!--这是一个很大的Button：点击这个Button，可以关闭界面-->
+            <Button Name="CloseButton"
+                    Height="372"
+                    Width="394"
+                    Style="{StaticResource NoBackgroundButtonStyle}"
                 Click="CloseButton_OnClick"
                 PreviewMouseDown="CloseButton_OnPreviewMouseDown"
                 PreviewMouseUp="CloseButton_OnPreviewMouseUp"></Button>
 
-        <!--背景-->
-        <Border Width="228" Height="286" Canvas.Left="148" Canvas.Top="42"
-                            Background="White" CornerRadius="12"
+            <!--背景-->
+            <Border Width="228"
+                    Height="314"
+                    Canvas.Left="148"
+                    Canvas.Top="42"
+                    Background="White" CornerRadius="12"
                             Opacity="1">
-            <Border.Effect>
-                <DropShadowEffect Direction="0" ShadowDepth="0" BlurRadius="20" 
-                                              Opacity="0.2" Color="#FF7A7A7A"></DropShadowEffect>
-            </Border.Effect>
+                <Border.Effect>
+                    <DropShadowEffect Direction="0"
+                            ShadowDepth="0"
+                            BlurRadius="20"
+                                      Opacity="0.2" Color="#FF7A7A7A"></DropShadowEffect>
+                </Border.Effect>
 
-            <Border Width="16" Height="11" Margin="70,-289,0,0"
-                    Background="{StaticResource Icon.WhiteArrow.ImageBrush}"></Border>
-        </Border>
-        <!--波点2-->
-        <Border Width="220" Height="276" Canvas.Left="152" Canvas.Top="48"
-                Background="{StaticResource Other.WavePoint.ImageBrush}" ></Border>
+                <Border Width="16"
+                        Height="11"
+                        Margin="70,-289,0,0"
+                        Background="{StaticResource Icon.WhiteArrow.ImageBrush}"></Border>
+            </Border>
+            <!--波点2-->
+            <Border Width="220"
+                    Height="276"
+                    Canvas.Left="152"
+                    Canvas.Top="48"
+                    Background="{StaticResource Other.WavePoint.ImageBrush}" ></Border>
 
 
 
 
-        <!--上半部分的内容-->
-        <Canvas Width="228" Height="288" Canvas.Left="148" Canvas.Top="40">
-            <!--装饰线（分割线）-->
-            <Border Width="193" Height="72" Canvas.Left="20" Canvas.Top="57"
-                                Background="{StaticResource Other.DivideLine.ImageBrush}"></Border>
-            <!--Logo-->
-            <Border Width="115" Height="114" Canvas.Left="13" Canvas.Top="19"
-                                Background="{StaticResource Icon.Logo.ImageBrush}"></Border>
-            <!--版本号-->
-            <Border Width="46" Height="18" Canvas.Left="132" Canvas.Top="44"
-                                Background="{StaticResource Other.Version.ImageBrush}"></Border>
+            <!--上半部分的内容-->
+            <Canvas Width="228"
+                    Height="288"
+                    Canvas.Left="148"
+                    Canvas.Top="40">
+                <!--装饰线（分割线）-->
+                <Border Width="193"
+                        Height="72"
+                        Canvas.Left="20"
+                        Canvas.Top="57"
+                        Background="{StaticResource Other.DivideLine.ImageBrush}"></Border>
+                <!--Logo-->
+                <Border Width="115"
+                        Height="114"
+                        Canvas.Left="13"
+                        Canvas.Top="19"
+                        Background="{StaticResource Icon.Logo.ImageBrush}"></Border>
+                <!--版本号-->
+                <Border Width="46"
+                        Height="18"
+                        Canvas.Left="132"
+                        Canvas.Top="44"
+                        Background="{StaticResource Other.Version.ImageBrush}"></Border>
 
-            <!--Github 的按钮-->
-            <local:ButtonControl x:Name="GithubButton" ButtonStyle="{StaticResource NoBackgroundButtonStyle}"
-                                             Width="43" Height="43" Canvas.Left="126" Canvas.Top="73"
+                <!--Github 的按钮-->
+                <local:ButtonControl x:Name="GithubButton"
+                        ButtonStyle="{StaticResource NoBackgroundButtonStyle}"
+                                     Width="43" Height="43" Canvas.Left="126" Canvas.Top="73"
                                              Icon="{StaticResource Icon.Github.ImageBrush}"
                                              IconWidth="43" IconHeight="43" Padding="-2"
                                              Cursor="Hand"
                                              Click="GithubButton_OnClick"></local:ButtonControl>
-            <!--应用程序信息 的按钮-->
-            <local:ButtonControl x:Name="StaffButton" ButtonStyle="{StaticResource NoBackgroundButtonStyle}"
-                                             Width="42" Height="43" Canvas.Left="172" Canvas.Top="73"
+                <!--应用程序信息 的按钮-->
+                <local:ButtonControl x:Name="StaffButton"
+                        ButtonStyle="{StaticResource NoBackgroundButtonStyle}"
+                                     Width="42" Height="43" Canvas.Left="172" Canvas.Top="73"
                                              Icon="{StaticResource Icon.AppInfo.ImageBrush}"
                                              IconWidth="42" IconHeight="43" Padding="-2"
                                              Cursor="Hand"
                                              MouseEnter="StaffButton_OnMouseEnter"
                                              MouseLeave="StaffButton_OnMouseLeave"></local:ButtonControl>
-        </Canvas>
+            </Canvas>
 
 
-        <!--下半部分的内容-->
-        <Canvas Width="228" Height="144" Canvas.Left="148" Canvas.Top="184">
-            <!--文字部分-->
-            <Border Name="TitleBorder"
-                    Width="76" Height="64"
+            <!--下半部分的内容-->
+            <Canvas Width="228"
+                    Height="172"
+                    Canvas.Left="148"
+                    Canvas.Top="184">
+                <!--文字部分-->
+                <Border Name="TitleBorder"
+                        Width="76" Height="64"
                     Background="{DynamicResource Setting.Title.ImageBrush}" Canvas.Left="28" Canvas.Top="32"></Border>
 
 
-            <!--声音-->
-            <Slider Name="VolumeSlider"
-                    Style="{DynamicResource CuteSliderStyle}" 
+                <!--声音-->
+                <Slider Name="VolumeSlider"
+                        Style="{DynamicResource CuteSliderStyle}" 
                     Width="112" Height="20" Canvas.Left="95" Canvas.Top="38"
                     Minimum="0" Maximum="100" Value="{Binding SettingData.Volume}"
                     Orientation="Horizontal" LargeChange="20" SmallChange="20"
@@ -101,85 +134,201 @@
                     MouseLeave="VolumeSlider_OnMouseLeave"
                     ValueChanged="VolumeSlider_OnValueChanged"></Slider>
 
-            <!--语言-->
-            <local:ToggleControl x:Name="LanguageToggleControl"
-                                 Width="80" Height="28" Canvas.Left="117" Canvas.Top="70"
+                <!--语言-->
+                <local:ToggleControl x:Name="LanguageToggleControl"
+                                     Width="80" Height="28" Canvas.Left="117" Canvas.Top="70"
                                  Icon="{StaticResource Setting.Chinese.ImageBrush}"
                                  IconWidth="71" IconHeight="24"></local:ToggleControl>
-            <Grid Name="LanguageGrid"
-                  Visibility="{Binding ElementName=LanguageToggleControl,Path=IsChecked,Converter={StaticResource BooleanToVisibilityConverter}}"
+                <Grid Name="LanguageGrid"
+                      Visibility="{Binding ElementName=LanguageToggleControl,Path=IsChecked,Converter={StaticResource BooleanToVisibilityConverter}}"
                   Width="105" Height="74" Canvas.Left="104" Canvas.Top="-7">
-                <Border Background="#FFFFCA00" CornerRadius="10">
-                    <Border.Effect>
-                        <DropShadowEffect Direction="0" ShadowDepth="0" BlurRadius="15" 
-                                          Opacity="0.15" Color="#FF7A7A7A"/>
-                    </Border.Effect>
-                </Border>
-                <StackPanel Width="105" Height="74">
-                    <local:ButtonControl x:Name="ChineseButtonControl"
-                                         ButtonStyle="{StaticResource NoBackgroundButtonStyle}"
+                    <Border Background="#FFFFCA00"
+                            CornerRadius="10">
+                        <Border.Effect>
+                            <DropShadowEffect Direction="0"
+                                    ShadowDepth="0"
+                                    BlurRadius="15"
+                                              Opacity="0.15" Color="#FF7A7A7A"/>
+                        </Border.Effect>
+                    </Border>
+                    <StackPanel Width="105"
+                            Height="74">
+                        <local:ButtonControl x:Name="ChineseButtonControl"
+                                             ButtonStyle="{StaticResource NoBackgroundButtonStyle}"
                                          Margin="5,5,5,2" Width="80" Height="28"
                                          Icon="{StaticResource Setting.Chinese.ImageBrush}"
                                          IconWidth="71" IconHeight="24"
                                          Cursor="Hand"
                                          Click="ChineseButtonControl_OnClick"></local:ButtonControl>
-                    <local:ButtonControl x:Name="EnglishButtonControl"
-                                         ButtonStyle="{StaticResource NoBackgroundButtonStyle}"
+                        <local:ButtonControl x:Name="EnglishButtonControl"
+                                             ButtonStyle="{StaticResource NoBackgroundButtonStyle}"
                                          Margin="5,2,5,5" Width="80" Height="28"
                                          Icon="{StaticResource Setting.English.ImageBrush}"
                                          IconWidth="71" IconHeight="24"
                                          Cursor="Hand"
                                          Click="EnglishButtonControl_OnClick"></local:ButtonControl>
-                </StackPanel>
-            </Grid>
+                    </StackPanel>
+                </Grid>
 
-            <!--开机自启动-->
-            <Canvas Width="160" Height="28" Canvas.Left="85" Canvas.Top="108">
-                <CheckBox Canvas.Left="0" Canvas.Top="4" 
-                          Width="18" Height="18"
+                <!--开机自启动-->
+                <Canvas Width="160"
+                        Height="28"
+                        Canvas.Left="85"
+                        Canvas.Top="108">
+                    <CheckBox Canvas.Left="0"
+                            Canvas.Top="4"
+                              Width="18" Height="18"
                           IsChecked="{Binding SettingData.StartupOnBoot}">
-                </CheckBox>
-                
-                <TextBlock Canvas.Left="25" Canvas.Top="2" 
-                           FontSize="14" Foreground="#FF333333"
+                    </CheckBox>
+
+                    <TextBlock Canvas.Left="25"
+                            Canvas.Top="2"
+                               FontSize="14" Foreground="#FF333333"
                            FontFamily="{StaticResource MaybeCuteFontFamily.IncreaseSpacing}"
                            Text="开机自启动"
                            Visibility="{Binding SettingData.Language}"
                            >
-                    <TextBlock.Style>
-                        <Style TargetType="TextBlock">
-                            <Setter Property="Visibility" Value="Collapsed" />
-                            <Style.Triggers>
-                                <DataTrigger Binding="{Binding SettingData.Language}" Value="2">
-                                    <Setter Property="Visibility" Value="Visible" />
-                                </DataTrigger>
-                            </Style.Triggers>
-                        </Style>
-                    </TextBlock.Style>
-                </TextBlock>
-                
-                <TextBlock Canvas.Left="25" Canvas.Top="2" 
-                           FontSize="14" Foreground="#FF333333"
+                        <TextBlock.Style>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="Visibility"
+                                        Value="Collapsed"/>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding SettingData.Language}"
+                                            Value="2">
+                                        <Setter Property="Visibility"
+                                                Value="Visible"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBlock.Style>
+                    </TextBlock>
+
+                    <TextBlock Canvas.Left="25"
+                            Canvas.Top="2"
+                               FontSize="14" Foreground="#FF333333"
                            FontFamily="{StaticResource MaybeCuteFontFamily.IncreaseSpacing}"
                            Text="Start with Windows"
                            Visibility="{Binding SettingData.Language}"
                            >
-                    <TextBlock.Style>
-                        <Style TargetType="TextBlock">
-                            <Setter Property="Visibility" Value="Collapsed" />
-                            <Style.Triggers>
-                                <DataTrigger Binding="{Binding SettingData.Language}" Value="1">
-                                    <Setter Property="Visibility" Value="Visible" />
-                                </DataTrigger>
-                            </Style.Triggers>
-                        </Style>
-                    </TextBlock.Style>
-                </TextBlock>
+                        <TextBlock.Style>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="Visibility"
+                                        Value="Collapsed"/>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding SettingData.Language}"
+                                            Value="1">
+                                        <Setter Property="Visibility"
+                                                Value="Visible"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBlock.Style>
+                    </TextBlock>
+                </Canvas>
+
+                <!--窗口置顶-->
+                <Canvas Width="160"
+                        Height="28"
+                        Canvas.Left="85"
+                        Canvas.Top="136">
+                    <CheckBox Canvas.Left="0"
+                            Canvas.Top="4"
+                              Width="18"
+                            Height="18"
+                              IsChecked="{Binding SettingData.AlwaysOnTop}">
+                    </CheckBox>
+
+                    <TextBlock Canvas.Left="25"
+                            Canvas.Top="2"
+                               FontSize="14"
+                            Foreground="#FF333333"
+                               FontFamily="{StaticResource MaybeCuteFontFamily.IncreaseSpacing}"
+                               Text="窗口置顶"
+                               Visibility="{Binding SettingData.Language}">
+                        <TextBlock.Style>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="Visibility"
+                                        Value="Collapsed"/>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding SettingData.Language}"
+                                            Value="2">
+                                        <Setter Property="Visibility"
+                                                Value="Visible"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBlock.Style>
+                    </TextBlock>
+
+                    <TextBlock Canvas.Left="25"
+                            Canvas.Top="2"
+                               FontSize="14"
+                            Foreground="#FF333333"
+                               FontFamily="{StaticResource MaybeCuteFontFamily.IncreaseSpacing}"
+                               Text="Always on Top"
+                               Visibility="{Binding SettingData.Language}">
+                        <TextBlock.Style>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="Visibility"
+                                        Value="Collapsed"/>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding SettingData.Language}"
+                                            Value="1">
+                                        <Setter Property="Visibility"
+                                                Value="Visible"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBlock.Style>
+                    </TextBlock>
+                </Canvas>
+
+                <!-- 自动开始计时
+                <Canvas Width="160" Height="28" Canvas.Left="85" Canvas.Top="164">
+                    <CheckBox Canvas.Left="0" Canvas.Top="4"
+                          Width="18" Height="18"
+                          IsChecked="{Binding SettingData.AutoStartTimer}">
+                    </CheckBox>
+
+                    <TextBlock Canvas.Left="25" Canvas.Top="2"
+                           FontSize="14" Foreground="#FF333333"
+                           FontFamily="{StaticResource MaybeCuteFontFamily.IncreaseSpacing}"
+                           Text="选中时间后自动开始"
+                           Visibility="{Binding SettingData.Language}"
+                           >
+                        <TextBlock.Style>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="Visibility" Value="Collapsed" />
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding SettingData.Language}" Value="2">
+                                        <Setter Property="Visibility" Value="Visible" />
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBlock.Style>
+                    </TextBlock>
+
+                    <TextBlock Canvas.Left="25" Canvas.Top="2"
+                           FontSize="14" Foreground="#FF333333"
+                           FontFamily="{StaticResource MaybeCuteFontFamily.IncreaseSpacing}"
+                           Text="Auto-start timer"
+                           Visibility="{Binding SettingData.Language}"
+                           >
+                        <TextBlock.Style>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="Visibility" Value="Collapsed" />
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding SettingData.Language}" Value="1">
+                                        <Setter Property="Visibility" Value="Visible" />
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBlock.Style>
+                    </TextBlock>
+                </Canvas> -->
             </Canvas>
 
         </Canvas>
-
-
 
         <!--工作人员名单-->
         <Popup Name="StaffPopup"
@@ -212,7 +361,5 @@
                 </Border.Effect>
             </Border>
         </Popup>
-
-    </Canvas>
-
+    </Grid>
 </UserControl>
